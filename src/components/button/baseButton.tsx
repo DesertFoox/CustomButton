@@ -1,17 +1,8 @@
 import React from 'react';
 
-interface IBaseButtonProps {
-    className?: string,
-    onClick: (e?: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void,
-    children?: React.ReactNode,
-    type?: "button" | "submit" | "reset",
-    disabled?: boolean,
-    title?: string,
-    loading?: boolean,
-    ariaLabel?: string,
-    onMouseEnter?: (e?: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void,
-    onMouseLeave?: (e?: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void,
-}
+import IBaseButtonProps from '../../core/interfaces/IButtonProps';
+
+
 
 const BaseButton: React.FC<IBaseButtonProps> = ({
     className = '',
@@ -21,7 +12,6 @@ const BaseButton: React.FC<IBaseButtonProps> = ({
     disabled = false,
     title = '',
     loading = false,
-    ariaLabel,
     onMouseEnter,
     onMouseLeave,
 }) => {
@@ -34,7 +24,6 @@ const BaseButton: React.FC<IBaseButtonProps> = ({
             type={type}
             disabled={disabled || loading}
             title={title}
-            aria-label={ariaLabel}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
         >
