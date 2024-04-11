@@ -8,26 +8,30 @@ import BaseButton from '../baseButton';
 interface IColorifiedButtonProps extends Omit<IBaseButtonProps, 'className'> {
     variant: ButtonVariant;
     customColorClasses?: string;
+    className?: string; // Allow className to be passed
 }
 
 const ColorifiedButton: React.FC<IColorifiedButtonProps> = ({
     variant,
     customColorClasses = '',
+    className = '',
     ...props
 }) => {
+    const baseClasses = 'px-2 py-2 text-md';
+
     const variantClasses = {
-        primary: 'bg-blue-500 hover:bg-blue-700 text-white',
-        danger: 'bg-red-500 hover:bg-red-700 text-white',
-        secondary: 'bg-gray-600 hover:bg-gray-800 text-white',
-        success: 'bg-green-500 hover:bg-green-700 text-white',
-        info: 'bg-teal-500 hover:bg-teal-700 text-white',
-        warning: 'bg-yellow-500 hover:bg-yellow-600 text-white',
-        light: 'bg-gray-100 hover:bg-gray-200 text-gray-800',
-        custom: customColorClasses,
+        primary: `bg-blue-500 hover:bg-blue-700 text-white ${baseClasses}`,
+        danger: `bg-red-500 hover:bg-red-700 text-white ${baseClasses}`,
+        secondary: `bg-gray-600 hover:bg-gray-800 text-white ${baseClasses}`,
+        success: `bg-green-500 hover:bg-green-700 text-white ${baseClasses}`,
+        info: `bg-teal-500 hover:bg-teal-700 text-white ${baseClasses}`,
+        warning: `bg-yellow-500 hover:bg-yellow-600 text-white ${baseClasses}`,
+        light: `bg-gray-100 hover:bg-gray-200 text-gray-800 ${baseClasses}`,
+        custom: `${customColorClasses} ${baseClasses}`,
     };
 
-    const classes = variantClasses[variant];
-    return <BaseButton {...props} className={classes} />;
+    const combinedClasses = `${variantClasses[variant]} ${className}`;
+    return <BaseButton {...props} className={combinedClasses} />;
 };
 
 export const PrimaryButton = (props: Omit<IColorifiedButtonProps, 'variant'>) => (

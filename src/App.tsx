@@ -1,6 +1,13 @@
+import ButtonActions from './components/button/buttonActions/buttonActions';
+
 import { DangerButton, InfoButton, PrimaryButton, SecondaryButton, SuccessButton, WarningButton, LightButton, CustomButton } from './components/button/colorifiedButtons/colorifiedButtons';
 
 const App = () => {
+
+  const handleSave = () => console.log('Save action triggered');
+  const handleCancel = () => console.log('Cancel action triggered');
+  const handleDelete = () => console.log('Delete action triggered');
+
   return (
     <div className='container mx-auto p-4 space-y-2'>
       <div className='grid grid-cols-1 w-48 '>
@@ -17,6 +24,14 @@ const App = () => {
           onClick={() => console.log('Custom clicked')} variant={'primary'}>
           Custom Button
         </CustomButton>
+      </div>
+      <div>
+        <h2>Button Actions</h2>
+        <ButtonActions
+          onSave={handleSave}
+          onCancel={handleCancel}
+          onDelete={handleDelete}
+        />
       </div>
 
     </div>
