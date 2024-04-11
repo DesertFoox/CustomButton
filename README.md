@@ -40,7 +40,7 @@ This project includes a `Dockerfile` and a `docker-compose.yml` to simplify the 
 
 2. **Viewing the Application**
 
-   Open your web browser and go to [http://localhost:3000](http://localhost:3000) to see the application running.
+   Open your web browser and go to [http://localhost:5173](http://localhost:5173) to see the application running.
 
 #### Using Node.js Locally
 
@@ -58,5 +58,5 @@ If you prefer to run the application locally without Docker, follow these steps:
    npm run dev
    ```
 
-   After running the development server, the application will be available at [http://localhost:3000](http://localhost:3000).
+   After running the development server, the application will be available at [http://localhost:5173](http://localhost:5173).
 
