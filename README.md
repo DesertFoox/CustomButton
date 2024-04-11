@@ -1,30 +1,62 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+# React Vite App
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is a React application bootstrapped with [Vite](https://vitejs.dev/). Vite provides a fast development environment with features like instant server start and hot module replacement (HMR). The application is containerized using Docker, facilitating development and deployment consistency across various environments.
 
-## Expanding the ESLint configuration
+## Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Before you begin, ensure you have the following installed on your system:
+- [Node.js](https://nodejs.org/) (Version 16.x or newer)
+- [Docker](https://www.docker.com/get-started)
+- [Docker Compose](https://docs.docker.com/compose/install/)
 
-- Configure the top-level `parserOptions` property like this:
+## Getting Started
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+### Clone the Repository
+
+To get started with this project, first clone the repository using Git:
+
+```bash
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Running the Application
+
+#### Using Docker
+
+This project includes a `Dockerfile` and a `docker-compose.yml` to simplify the development and deployment processes using Docker and Docker Compose.
+
+1. **Build and Run the Container**
+
+   To build and run the application in a Docker container, execute the following command from the root of the project:
+
+   ```bash
+   docker-compose up
+   ```
+
+   This command builds the Docker image if it's not already built and starts the application. The Vite server will be accessible at `http://localhost:3000`.
+
+2. **Viewing the Application**
+
+   Open your web browser and go to [http://localhost:5173](http://localhost:5173) to see the application running.
+
+#### Using Node.js Locally
+
+If you prefer to run the application locally without Docker, follow these steps:
+
+1. **Install Dependencies**
+
+   ```bash
+   npm install
+   ```
+
+2. **Start the Development Server**
+
+   ```bash
+   npm run dev
+   ```
+
+   After running the development server, the application will be available at [http://localhost:5173](http://localhost:5173).
+
