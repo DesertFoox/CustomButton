@@ -5,15 +5,12 @@ import ButtonVariant from '../../../core/types/color.type';
 
 import BaseButton from '../baseButton';
 
-interface IColorifiedButtonProps extends Omit<IBaseButtonProps, 'className'> {
+interface IColorifiedButtonProps extends IBaseButtonProps {
     variant: ButtonVariant;
-    customColorClasses?: string;
-    className?: string; // Allow className to be passed
 }
 
 const ColorifiedButton: React.FC<IColorifiedButtonProps> = ({
     variant,
-    customColorClasses = '',
     className = '',
     ...props
 }) => {
@@ -27,7 +24,7 @@ const ColorifiedButton: React.FC<IColorifiedButtonProps> = ({
         info: `bg-teal-500 hover:bg-teal-700 text-white ${baseClasses}`,
         warning: `bg-yellow-500 hover:bg-yellow-600 text-white ${baseClasses}`,
         light: `bg-gray-100 hover:bg-gray-200 text-gray-800 ${baseClasses}`,
-        custom: `${customColorClasses} ${baseClasses}`,
+        custom: `${className} ${baseClasses}`,
     };
 
     const combinedClasses = `${variantClasses[variant]} ${className}`;

@@ -11,7 +11,7 @@ const App = () => {
   return (
     <div className='container mx-auto p-4 space-y-2'>
       <div className='grid grid-cols-1 w-48 '>
-        <h1>Custom Buttons</h1>
+        <h1 className='text-2xl'>Custom Buttons</h1>
         <PrimaryButton onClick={() => console.log('Primary clicked')}>Primary Button</PrimaryButton>
         <SecondaryButton onClick={() => console.log('Secondary clicked')}>Secondary Button</SecondaryButton>
         <SuccessButton onClick={() => console.log('Success clicked')}>Success Button</SuccessButton>
@@ -20,13 +20,13 @@ const App = () => {
         <WarningButton onClick={() => console.log('Warning clicked')}>Warning Button</WarningButton>
         <LightButton onClick={() => console.log('Light clicked')}>Light Button</LightButton>
         <CustomButton
-          customColorClasses="bg-purple-500 hover:bg-purple-700 text-white"
+          className="bg-purple-500 hover:bg-purple-700 text-white"
           onClick={() => console.log('Custom clicked')} variant={'primary'}>
           Custom Button
         </CustomButton>
       </div>
       <div>
-        <h2>Button Actions</h2>
+        <h2 className='text-2xl'>Button Actions</h2>
         <ButtonActions
           onSave={handleSave}
           onCancel={handleCancel}

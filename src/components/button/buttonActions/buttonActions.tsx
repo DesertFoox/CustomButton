@@ -12,7 +12,7 @@ const ButtonActions: React.FC<ButtonActionsProps> = ({ onSave, onCancel, onDelet
     return (
         <div className="flex justify-end space-x-4">
             {onDelete && (
-                <DangerButton onClick={onDelete}>Delete</DangerButton>
+                <DangerButton  onClick={onDelete}>Delete</DangerButton>
             )}
             <SecondaryButton onClick={onCancel}>Cancel</SecondaryButton>
             <PrimaryButton onClick={onSave}>Save</PrimaryButton>
